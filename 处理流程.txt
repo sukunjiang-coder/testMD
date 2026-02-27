@@ -1,0 +1,36 @@
+我准备对NA12878进行单倍体组装，并且将父源和母源甲基化分类，并且分析
+
+原始数据有2个：
+（1）PacBio HiFi 数据（BAM格式）
+（2）单染色体二代测序数据（深度较低，但是所有点都集中在一条hap上）
+
+数据处理
+===
+PacBio HiFi数据
+pbmm2 -- mapping
+deepvariant -- variant calling
+whatshap -- read-backed phasing
+获取到phase set（PS) 
+===
+单染色体数据
+BWA -- mapping
+GATK -- variant calling
+获取到单染色体的Allele
+===
+PacBio HiFi数据的 phase set
+通过单染色体的Allele数据进行全染色体串接。
+可以越过中心粒，高度复制区域等
+
+===
+做出全染色体级别的phasing,做出hapA 和 hapB
+然后反向匹配，PacBio HiFi数据的甲基化，将甲基化根据父源和母源分类
+====
+
+
+以上是我的处理流程，我需要你正式的润色为可以操作的流程（包括每一步用哪些软件之类）
+如果没有现成的软件，需要注明，这一步需要自己写代码，基本原理是啥。
+
+最后，帮我总结一下这个工作的意义，以及学术界是否有相似或者相同工作
+
+
+
