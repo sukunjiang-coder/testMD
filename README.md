@@ -103,6 +103,9 @@ samtools view m54329U_hg38.aligned.sorted_chr1.bam | cut -f1-9 > first9_fields_c
 
 ``` bash
 sudo docker pull google/deepvariant:1.9.0
+
+#验证安装成功
+sudo docker images | grep deepvariant
 ```
 
 ## 运行 DeepVariant
